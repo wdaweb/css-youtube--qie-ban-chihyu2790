@@ -1,0 +1,482 @@
+/* 細節修正，內容豐富 */
+
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+body,
+html {
+    height: 100%;
+    /* background: rgb(241, 241, 241); */
+    background: rgb(241, 241, 241);
+}
+
+
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* 捲軸------------------------------------------------------------------------------------------- */
+
+/* 卷軸底色 */
+/* #style::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #ffc0cb;
+} */
+
+/* 三個都用? */
+/* 卷軸寬度 */
+.style::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* 捲軸本體顏色 */
+.style::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 20px;
+}
+
+/* 無法完美復刻ㄟ */
+.style::-webkit-scrollbar-thumb:hover {
+    background-color: #777777;
+}
+
+
+.style-main::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(241, 241, 241);
+}
+
+.style-main::-webkit-scrollbar-thumb {
+    background-color: #777777;
+
+    border-radius: 20px;
+}
+
+.style-main::-webkit-scrollbar-thumb:hover {
+    background-color: #a5a5a5;
+}
+
+/* header------------------------------------------------------------------------------------------- */
+#header {
+    background: rgb(255, 255, 255);
+    /* color: white; */
+
+    width: 100%;
+    /* height: 8%; */
+
+    top: 0;
+    position: fixed;
+    z-index: 1;
+
+    overflow: hidden;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+    text-align: center;
+    /* 因為這個 */
+    font-size: 0;
+    z-index: 2;
+
+}
+
+/* 總高58 50 + 4 + 4 */
+#header .logo,
+#header .search,
+#header .user {
+    line-height: 50px;
+
+}
+
+#header .logo {
+    float: left;
+}
+
+#header .logo .menu {
+    font-size: 0;
+}
+
+#header .logo .menu .menu_items {
+    display: inline-block;
+    padding-right: 25px;
+    vertical-align: middle;
+}
+
+/* #header .logo .menu .menu_items:nth-child(1) {
+    padding-right: 300px;
+} */
+
+#header .logo a {
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+}
+
+/* 原本是div，沒設定前本來就是block */
+/* 設成inline-block只有對外改成inline，其他沒變 */
+#header .search {
+    padding: 4px 0px;
+    font-size: 14px;
+    display: inline-block;
+    font-size: 0
+}
+
+.container {
+    width: 97%;
+    margin: auto;
+}
+
+#header .search input,
+#header .search button {
+    font-size: 14px;
+    appearance: none;
+    border: none;
+    vertical-align: middle;
+}
+
+#header .search input {
+    -moz-appearance: none;
+
+    border: 1px solid #cccccc;
+    width: 550px;
+    height: 40px;
+}
+
+/*input標籤聚焦不出現預設邊框:*/
+#header .search input:focus {
+    outline: none;
+}
+
+/* why高度與input不同 */
+#header .search button {
+    border: 1px solid #cccccc;
+    outline: none;
+    font-size: 20px;
+    color: #1a1a1a;
+    background: #f6f6f6;
+    width: 60px;
+    height: 44px;
+}
+
+#header .search button:hover {
+    cursor: pointer;
+    background: #1a1a1a16;
+    box-shadow: 0px 1px 2px #e9e9e9;
+}
+
+#header .user {
+    float: right;
+}
+
+/* ◆◆◆menu有自己的line-height，與內層的line-height撞到 */
+/* menu有自己的尺寸，與父子層無關，測試把父調大，子調小 */
+#header .user .menu {
+    font-size: 0;
+    padding: 4px 0px;
+}
+
+#header .user .menu .menu_items {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    /* margin:  4px 0; */
+}
+
+/* box-shadow: 0px 0px 0px 1px rgb(0, 30, 255); */
+/* ◆◆◆不會box-sizing */
+#header .menu .menu_items:nth-child(3) {
+    outline: 1px solid rgb(0, 30, 255);
+}
+
+#header .menu .menu_items:nth-child(3) a:visited {
+    color: rgb(0, 30, 255);
+}
+
+#header .user .menu a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 1rem;
+}
+
+
+/* sidebar------------------------------------------------------------------------------------------- */
+
+
+#sidebar {
+    width: 16%;
+    height: 92%;
+    background: white;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    overflow: auto;
+    font-size: 14px;
+    /* z-index: 3; */
+}
+
+#sidebar a {
+    text-decoration: none;
+}
+
+.container-side {
+    width: 95%;
+    margin: 0 auto 0 0;
+}
+
+#sidebar .card {
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(198, 198, 198);
+}
+
+/* #sidebar .card:nth-child(1) {
+    padding: 0 0 0 10px;
+} */
+
+#sidebar .col:nth-child(1) .menu:nth-child(1) li:nth-child(1) {
+    background-color: #e5e5e5;
+}
+
+#sidebar .menu a:hover {
+    /* color: white; */
+    background-color: #2828280a;
+}
+
+#sidebar .menu a {
+    display: block;
+    padding: 12px 22px;
+
+}
+
+/* 所有logo與旁邊間隔10 */
+#sidebar i {
+    padding: 0 25px 0 0;
+}
+
+
+#sidebar .login {
+    padding: 10px 22px;
+}
+
+#sidebar .login-logo {
+    margin-top: 15px;
+    margin-right: 85px;
+    border: 1px solid rgb(0, 30, 255);
+    border-radius: 2px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#sidebar .login-logo i,
+#sidebar .login-logo a {
+    color: rgb(0, 30, 255);
+}
+
+#sidebar .login-logo i {
+
+    padding: 0 10px 0 0;
+    font-size: 17px;
+}
+
+#sidebar .login-logo a {
+    display: block;
+    padding: 10px;
+}
+
+#sidebar .col:nth-child(4) .menu_items:nth-child(1),
+#sidebar .col:nth-child(6) .menu_items:nth-child(1) {
+    color: #606060;
+    padding: 0 0 0 20px;
+    line-height: 30px;
+    font-size: 16px;
+    font-style: normal
+}
+
+#sidebar .footer {
+    line-height: 20px;
+    font-size: 13px;
+    padding: 0 0 0 22px;
+
+}
+
+#sidebar .footer a,
+#sidebar .footer p {
+    color: #606060;
+}
+
+/* type------------------------------------------------------------------------------------------- */
+/* 原本想拉一個跟type一樣大小位置的div，來給底下的content做高度基準點，但發現好像也不用。 */
+
+#type {
+    width: 84%;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    top: 8%;
+    left: 16%;
+
+    line-height: 40px;
+    text-align: center;
+    z-index: 1;
+}
+
+
+#type .menu .menu_items {
+    display: inline-block;
+}
+
+#type .menu a {
+    border-radius: 1.4rem;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    text-decoration: none;
+
+    background: #f2f2f2;
+    display: block;
+    padding: 0 14px;
+    margin: 0.6rem 0.2rem;
+}
+
+#type .menu a:hover {
+    background-color: #28282814;
+}
+
+#type .menu .menu_items:first-child a {
+
+    color: white;
+    background: #000000;
+}
+
+
+/* content------------------------------------------------------------------------------------------- */
+/* box-sizing: border-box;逐一套用 */
+#content {
+    background: rgb(241, 241, 241);
+    /* margin %都是以父元素的"寬度"作為依據，不會以高度做計算。 */
+    /* padding %都是以父元素的"寬度"作為依據，不會以高度做計算。 */
+    margin-left: 16%;
+    /* ◆◆◆why */
+    margin-top: 7%;
+}
+
+/* 只是橫向的概念 */
+#content .row {
+    border: 0px;
+}
+
+
+/* #content .row:nth-child(2),
+#content .row:nth-child(3) {
+    padding-bottom: 10px;
+    border-bottom: 3px solid gray;
+} */
+
+#content .row .col {
+    box-sizing: border-box;
+    padding: 8px;
+    padding-top: 40px;
+    width: 25%;
+    background: rgb(241, 241, 241);
+    float: left;
+    /* position: relative; */
+}
+
+#content .channel {
+    /* padding: 1rem; */
+    background: rgb(241, 241, 241);
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.timer {
+    position: absolute;
+    color: white;
+    background: black;
+    right: 2%;
+    bottom: 37%;
+    padding: 1px;
+}
+
+.timer-short {
+    position: absolute;
+    color: white;
+    background: black;
+    right: 2.5%;
+    bottom: 32%;
+    padding: 1px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    /* width: 245px;
+    height: 138px; */
+}
+
+.thumbnail {
+    margin-bottom: 8px;
+}
+
+/* ◆◆◆channel大小不同 */
+
+.channel .channellogo {
+    float: left;
+
+    /* background: lightcoral; */
+}
+
+.channel .channellogo img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.channel .channel-body {
+    line-height: 20px;
+    padding-left: 10px;
+    float: left;
+    width: 75%;
+    /* background: khaki; */
+}
+
+.channel .channel-body h3 {
+    font-size: 14px;
+}
+
+.channel .channel-body p {
+    font-size: 12px;
+}
+
+.channel .more-info {
+    float: right;
+    width: 5%;
+}
+
+/* .channel::after {
+    content: '17:01';
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    top: 143px;
+    right: 6px;
+    width: 40px;
+    height: 16px;
+    position: absolute;
+    background: black;
+
+} */
+
+.channel i {
+    color: #f1f1f1;
+}
+
+.channel:hover {
+    transform: scale(1.15);
+    z-index: 1000;
+}

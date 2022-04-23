@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 探討異常在ul下面有縫  結論:別在ul設定line-height ，在li設定才對 要訂ul高，用height/
+    ul {
+        /line-height設定內容預設(li)尺寸 若遇上font-size:0(沒給值) 且li正常顯示會自動高一些/
+        line-height: 75px;
+        / 去除幽靈空白 以便填滿 !不能省去!/
+        font-size: 0px;
+    }
+
+    li {
+        font-size: 10px;
+        / height:60px; /
+        / line-height: 75px; /
+        / 以下可放行內+剛好填滿  !不能省去!/
+        display: inline-block;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    / -----------------基本設定 */
+        ul,
+        li {
+            border: #000 1px solid;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>登</li>
+        <li>登</li>
+    </ul>
+</body>
+
+</html>
